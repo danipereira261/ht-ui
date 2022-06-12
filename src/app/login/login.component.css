@@ -1,9 +1,0 @@
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #000
-}
-.back{
-    background: rgb(7,65,104);
-    background: linear-gradient(90deg, rgba(7,65,104,1) 0%, rgba(9,48,121,1) 29%, rgba(99,94,180,1) 65%, rgba(0,212,255,1) 100%);
-}

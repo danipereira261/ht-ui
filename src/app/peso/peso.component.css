@@ -1,0 +1,13 @@
+
+body {
+    margin: 0!important;
+    height: 100%!important;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(7,65,104);
+    background-color: white;
+}
+
+.margin-peso{
+    padding-top: 10px;
+    height: 41vh;
+}
