@@ -1,0 +1,77 @@
+<body>
+<!-- header da página -->
+<header class="header-top">
+    <h1 class="header-title">Health Track</h1>
+    <div class="d-flex flex-row-reverse">
+        <a >
+            <i class="fa fa-sign-out" aria-hidden="true" style="color: white" (click)="logout()"></i>
+        </a>
+    </div>
+</header>
+<!-- fim header da página -->
+
+<!-- sub_header da página -->
+<header class="sub-header">
+    <div class="col-11">
+        <div class="row">
+            <div class="col-12 fw-bold">Home</div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 margin-10">
+            <div class="d-grid justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../assets/img/balance.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Peso</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Registro e controle de peso</h6>
+
+                        <a  class="card-link" ><p style="color: cornflowerblue" (click)="peso()">Acessar</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 margin-10">
+            <div class="d-grid justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../assets/img/food.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Refeições</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Registro de refeições</h6>
+
+                        <a class="card-link" ><p style="color: cornflowerblue" (click)="refeicao()" >Acessar</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 margin-10">
+            <div class="d-grid justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../assets/img/run.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Atividade Física</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Registro de atividades físicas</h6>
+
+                        <a  class="card-link" ><p style="color: cornflowerblue" (click)="atividadeFisica()" >Acessar</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 margin-10">
+            <div class="d-grid justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../assets/img/pressao.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Pressão Arterial</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Registro de Pressão Arterial</h6>
+
+                        <a class="card-link" ><p style="color: cornflowerblue" (click)="pressao()" >Acessar</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

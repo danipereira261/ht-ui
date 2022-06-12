@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    margin: 0!important;
+    height: 100%!important;
+}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+}
+.html, body{
+    height: 100%!important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000000 !important;
+}
+
+ul {
+    list-style: none;
+}
+
+/* header */
+.header-top {
+    width: 100%;
+    height: 80px;
+    background: rgb(31,27,27);
+    background: linear-gradient(90deg, rgba(31,27,27,1) 0%, rgba(147,149,153,1) 43%, rgba(31,27,27,1) 100%);
+    padding: 0 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.header-nav ul {
+    display: flex;
+}
+
+.header-nav li {
+    margin: 10px;
+}
+
+.header-nav a {
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.header-nav a:hover {
+    color: #dc143c;
+}
+
+/* fim header */
+
+/* sub-header */
+
+.sub-header {
+    width: 100%;
+    background: rgb(73,73,73);
+    background: linear-gradient(90deg, rgba(73,73,73,1) 0%, rgba(109,114,125,1) 29%, rgba(178,178,184,1) 65%, rgba(226,231,232,1) 100%);
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.sub-header-teste {
+    width: 100%;
+    background-color: #ccc;
+    padding: 10px;
+    color: #fff;
+    align-items: center;
+}
+
+.body-list {
+    width: 100%;
+    height: 80px;
+    background-color: #ccc;
+    border: 10px solid #fff;
+    margin-top: 5px;
+    padding: 0 10px 0 15px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.margin-10{
+    padding-top: 20px;
+}

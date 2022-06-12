@@ -1,0 +1,114 @@
+
+<body>
+
+<!-- header da página -->
+<header class="header-top">
+    <a >
+        <h1 class="header-title" (click)="home()">Health Track</h1>
+    </a>
+    <div class="d-flex flex-row-reverse">
+        <a href="login.html">
+            <i class="fa fa-sign-out" aria-hidden="true" style="color: white"></i>
+        </a>
+    </div>
+</header>
+<header class="sub-header">
+    <div class="row">
+        <div class="col-12 fw-bold">Registros de Refeições</div>
+    </div>
+</header>
+
+<form>
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="data" placeholder="data">
+                    <label for="data">Data</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="refeicao" placeholder="refeicao">
+                    <label for="refeicao">Refeição</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="quantidade" placeholder="quantidade">
+                    <label for="quantidade">Quantidade</label>
+                </div>
+                <div class="d-grid" style="margin-top: 10px">
+                    <button class="btn btn-outline-secondary fw-bold col-12" type="button">
+                        Registrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Registro</th>
+            <th scope="col">Data</th>
+            <th scope="col">Refeição</th>
+            <th scope="col">Quantidade(KG)</th>
+            <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>01/10/2021</td>
+            <td>Banana</td>
+            <td>1</td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        <tr>
+            <th scope="row">1</th>
+            <td>01/10/2021</td>
+            <td>Proteina</td>
+            <td>1</td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">1</th>
+            <td>01/10/2021</td>
+            <td>Legume</td>
+            <td>1</td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">1</th>
+            <td>01/10/2021</td>
+            <td>Verdura</td>
+            <td>1</td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
