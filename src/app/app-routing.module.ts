@@ -8,14 +8,14 @@ import {CadastrarComponent} from "./cadastrar/cadastrar.component";
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: '/login',
         pathMatch: 'full',
     },
     {
-        path: '',
+        path: 'login',
         component: LoginComponent,
         data: {
-            title: 'Login Page'
+            title: 'login'
         }
     },
     {
@@ -33,7 +33,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'login',
+        path: 'Home',
         component: AppComponent,
         data: {
             title: 'Home'
