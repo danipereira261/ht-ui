@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['home'])
             ,
             err => {
-                this.addElement()
+                this.showError()
             });
 
     }
 
-    addElement() {
+    showError() {
         const p: HTMLParagraphElement = this.renderer.createElement('p');
         p.innerHTML = '<p class="alert alert-danger" style="text-align: center">Erro ao Efetuar login<br> usuário ou senha incorretos</p>' ;
         // @ts-ignore
@@ -59,5 +59,4 @@ export class LoginComponent implements OnInit {
     cadastro() {
         this.router.navigate(['cadastrar'])
     }
-
 }
