@@ -4,27 +4,53 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card border-0 shadow rounded-3 my-5">
                 <div class="card-body p-4 p-sm-5">
+                    <div style="margin-top: -20px; margin-left: -20px" >
+                        <img src="assets/icon/arrow.svg" (click)="voltar()" width="30">
+                    </div>
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro de Usuários</h5>
-                    <form>
+                    <form [formGroup]="myControl">
+
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="nome" placeholder="João da Silva">
+                            <input formControlName="nome" name="nome" type="text" class="form-control" id="nome"
+                                   placeholder="João da Silva">
                             <label for="email">Nome</label>
                         </div>
+                        <label for="sexo">Sexo</label>
+                        <div class="form-floating mb-3 dropdown">
+
+                            <select formControlName="sexo" name="sexo" id="sexo">
+                                <option value=""></option>
+                                <option value="MASCULINO">Masculino</option>
+                                <option value="FEMININO">Feminino</option>
+                            </select>
+                        </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            <input formControlName="dataNascimento" name="dataNascimento" type="date"
+                                   class="form-control" id="dataNascimento" placeholder="dataNascimento">
+                            <label for="dataNascimento">Data Nascimento</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input formControlName="cpf" name="cpf" type="text" class="form-control" id="cpf"
+                                   placeholder="cpf">
+                            <label for="cpf">CPF</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input formControlName="email" name="email" type="email" class="form-control" id="email"
+                                   placeholder="name@example.com">
                             <label for="email">Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="senha" placeholder="senha">
+                            <input formControlName="password" name="password" type="password" class="form-control"
+                                   id="senha" placeholder="password">
                             <label for="senha">Senha</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="confirmar-senha"
-                                   placeholder="confirmar-senha">
-                            <label for="confirmar-senha">Confirmar Senha</label>
+                            <input formControlName="rePassword" name="rePassword" type="password" class="form-control"
+                                   id="rePassword" placeholder="rePassword">
+                            <label for="rePassword">Confirmar Senha</label>
                         </div>
                         <div class="d-grid">
-                            <a >
+                            <a>
                                 <button class="btn btn-outline-dark fw-bold col-12" type="button" (click)="salvar()">
                                     Salvar
                                 </button>

@@ -11,7 +11,6 @@ export class AuthService{
     }
 
     public auth(authModel: AuthModel) {
-        console.log(authModel)
         return this.http.post(`http://localhost:8080/api/v1/auth/token`, authModel);
     }
 }

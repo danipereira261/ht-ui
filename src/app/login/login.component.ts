@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
@@ -40,12 +40,14 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['home'])
             ,
             err => {
-                console.log('Erro ao Efetuar login');
+                alert('Erro ao Efetuar login, usuario ou senha incorretos.')
             });
 
     }
 
+
     cadastro() {
         this.router.navigate(['cadastrar'])
     }
+
 }
