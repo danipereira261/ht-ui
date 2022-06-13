@@ -6,21 +6,17 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
-import {ReactiveFormsModule} from "@angular/forms";
-import {LoginComponent} from "./login/login.component";
 
 @NgModule({
     declarations: [
-        AppComponent,
-        LoginComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
         HttpClientModule,
-        CommonModule,
-        ReactiveFormsModule,
+        CommonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
