@@ -8,6 +8,11 @@ import {CadastrarComponent} from "./cadastrar/cadastrar.component";
 const routes: Routes = [
     {
         path: '',
+        redirectTo: '/login',
+        pathMatch: 'full',
+    },
+    {
+        path: '',
         component: LoginComponent,
         data: {
             title: 'Login Page'
