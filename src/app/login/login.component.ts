@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
                 this.show()
                 setTimeout(() => {
                     this.remove();
-                }, 1000);
+                }, 2000);
             });
 
     }
