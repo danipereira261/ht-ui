@@ -35,7 +35,7 @@ export class PesoComponent implements OnInit {
         peso: new FormControl(),
         dataRegistro: new FormControl(),
     });
-    displayedColumns: string[] = ['registro', 'data', 'peso', 'acoes'];
+    displayedColumns: string[] = ['registro', 'data', 'peso'];
 
     dataSource = new MatTableDataSource<PesoModel>([]);
 
@@ -96,7 +96,7 @@ export class PesoComponent implements OnInit {
 
     show() {
         const p: HTMLParagraphElement = this.renderer.createElement('p');
-        p.innerHTML = '<p id="alerta" class="alert alert-info" style="text-align: center">Peso Adicionado com sucesso!</p>';
+        p.innerHTML = '<p id="alerta" class="alert alert-info" style="text-align: center">Dados Adicionado com sucesso!</p>';
         // @ts-ignore
         this.renderer.appendChild(this.asdf.nativeElement, p)
 
