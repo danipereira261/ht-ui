@@ -52,8 +52,6 @@ export class CadastrarComponent implements OnInit {
         const newDate = new DatePipe('en-US').transform(dataNascimento, 'dd/MM/yyyy');
         const pessoa = new CadastroPessoaModel(nome, sexo, newDate, cpf, email, password);
 
-        console.log(password)
-        console.log(rePassword)
         if (password != rePassword) {
             alert('Senhas diferentes');
         } else {

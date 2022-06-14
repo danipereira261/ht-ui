@@ -40,20 +40,32 @@ export class LoginComponent implements OnInit {
 
 
         this.auth.auth(auth).subscribe(
-            c =>
-                this.router.navigate(['home'])
+            c => {
+                console.log(c)
+                this.router.navigate(['home']);
+                // @ts-ignore
+                localStorage.setItem('cpf', c.cpf);
+            }
             ,
             err => {
-                this.showError()
+                this.show()
+                setTimeout(() => {
+                    this.remove();
+                }, 1000);
             });
 
     }
 
-    showError() {
+    show() {
         const p: HTMLParagraphElement = this.renderer.createElement('p');
-        p.innerHTML = '<p class="alert alert-danger" style="text-align: center">Erro ao Efetuar login<br> usuário ou senha incorretos</p>' ;
+        p.innerHTML = '<p id="alerta" class="alert alert-danger" style="text-align: center">Erro ao Efetuar login<br> usuário ou senha incorretos</p>';
         // @ts-ignore
         this.renderer.appendChild(this.exampleDiv.nativeElement, p)
+
+    }
+
+    remove() {
+        const e = this.renderer.selectRootElement('.another-test',false);
     }
 
     cadastro() {

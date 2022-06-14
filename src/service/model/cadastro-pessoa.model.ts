@@ -1,6 +1,4 @@
-import {DatePipe} from "@angular/common";
-
-export class CadastroPessoaModel{
+export class CadastroPessoaModel {
 
     public nome: string;
     public sexo: string;

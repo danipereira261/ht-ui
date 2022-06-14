@@ -11,3 +11,6 @@ body {
     padding-top: 10px;
     height: 41vh;
 }
+table {
+    width: 80% !important;
+}
