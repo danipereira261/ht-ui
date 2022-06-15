@@ -72,9 +72,9 @@ export class PesoComponent implements OnInit {
         const newDate = new DatePipe('en-US').transform(dataRegistro, 'dd/MM/yyyy');
         const cpf = localStorage.getItem('cpf');
         // @ts-ignore
-        const pesoModel = new PesoModel(peso, newDate, cpf);
+        const model = new PesoModel(peso, newDate, cpf);
 
-        this.service.cadastrarPeso(pesoModel).subscribe(
+        this.service.cadastrar(model).subscribe(
             c => {
                 this.refreshFunc()
                 this.show()

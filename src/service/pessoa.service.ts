@@ -11,8 +11,8 @@ export class PessoaService{
     ) {
     }
 
-    public cadastrar(cadastroPessoaModel: CadastroPessoaModel) {
-        return this.http.post(`http://localhost:8080/api/v1/pessoa`, cadastroPessoaModel);
+    public cadastrar(model: CadastroPessoaModel) {
+        return this.http.post(`http://localhost:8080/api/v1/pessoa`, model);
         // return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/pessoa`, cadastroPessoaModel);
     }
 }

@@ -1,0 +1,23 @@
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {RefeicaoModel} from "./model/refeicao.model";
+
+@Injectable({providedIn: 'root'})
+export class AtividadeFisicaService {
+
+    constructor(
+        public http: HttpClient
+    ) {
+    }
+
+
+    public cadastrarPeso(request: RefeicaoModel) {
+        return this.http.post(`http://localhost:8080/api/v1/registro-refeicao`, request);
+        // return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/registro-refeicao` , request);
+    }
+
+    public buscarTodosRegistros(cpf: string) {
+        return this.http.get('http://localhost:8080/api/v1/registro-refeicao/?cpf=' + cpf);
+        // return this.http.get('https://ht-app-back.herokuapp.com/api/v1/registro-refeicao/?cpf=' + cpf);
+    }
+}

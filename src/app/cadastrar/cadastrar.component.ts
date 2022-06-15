@@ -23,7 +23,7 @@ export class CadastrarComponent implements OnInit {
     });
 
     constructor(
-        private pessoaService: PessoaService,
+        private service: PessoaService,
         private router: Router
     ) {
     }
@@ -55,7 +55,7 @@ export class CadastrarComponent implements OnInit {
         if (password != rePassword) {
             alert('Senhas diferentes');
         } else {
-            this.pessoaService.cadastrar(pessoa).subscribe(
+            this.service.cadastrar(pessoa).subscribe(
                 c => this.router.navigate([''])
             );
         }

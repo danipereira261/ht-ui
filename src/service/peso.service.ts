@@ -10,9 +10,9 @@ export class PessoaService {
     ) {
     }
 
-    public cadastrarPeso(pesoModel: PesoModel) {
-        return this.http.post(`http://localhost:8080/api/v1/registro-peso`, pesoModel);
-        // return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/registro-peso` , pesoModel);
+    public cadastrar(model: PesoModel) {
+        return this.http.post(`http://localhost:8080/api/v1/registro-peso`, model);
+        // return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/registro-peso` , model);
     }
 
     public buscarTodosRegistros(cpf: string) {
