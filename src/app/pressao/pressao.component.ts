@@ -20,7 +20,7 @@ export class PressaoComponent implements OnInit {
         medicao: new FormControl(),
         dataRegistro: new FormControl(),
     });
-    displayedColumns: string[] = ['registro', 'data', 'medicao'];
+    displayedColumns: string[] = ['data', 'medicao', 'acao'];
 
     dataSource = new MatTableDataSource<PressaoModel>([]);
 
@@ -44,6 +44,7 @@ export class PressaoComponent implements OnInit {
         const cpf = localStorage.getItem('cpf');
         // @ts-ignore
         this.service.buscarTodosRegistros(cpf).subscribe((data: any) => {
+                console.log(data);
                 this.dataSource = data;
             }
         );
@@ -62,6 +63,7 @@ export class PressaoComponent implements OnInit {
 
         this.service.salvar(pressaoModel).subscribe(
             c => {
+                this.clean();
                 this.refreshFunc()
                 this.show()
                 setTimeout(() => {
@@ -92,4 +94,16 @@ export class PressaoComponent implements OnInit {
         const e = this.renderer.selectRootElement('.another-test', false);
     }
 
+    delete(element: any) {
+        this.service.deletById(element.id).subscribe((data: any) => {
+                this.dataSource = data;
+                this.refreshFunc();
+            }
+        );
+    }
+
+    clean() {
+        this.myControl.get('medicao')?.setValue('');
+        this.myControl.get('dataRegistro')?.setValue('');
+    }
 }

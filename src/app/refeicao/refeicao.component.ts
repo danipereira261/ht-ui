@@ -22,7 +22,7 @@ export class RefeicaoComponent implements OnInit {
         quantidadeEmGramas: new FormControl(),
         descricao: new FormControl()
     });
-    displayedColumns: string[] = ['dataRegistro', 'tipoRefeicao', 'quantidadeEmGramas', 'descricao'];
+    displayedColumns: string[] = ['dataRegistro', 'tipoRefeicao', 'quantidadeEmGramas', 'descricao', 'acao'];
 
     dataSource = new MatTableDataSource<RefeicaoModel>([]);
 
@@ -67,6 +67,7 @@ export class RefeicaoComponent implements OnInit {
 
         this.service.cadastrar(model).subscribe(
             c => {
+                this.clean()
                 this.refreshFunc()
                 this.show()
                 setTimeout(() => {
@@ -97,4 +98,18 @@ export class RefeicaoComponent implements OnInit {
         const e = this.renderer.selectRootElement('.another-test', false);
     }
 
+    delete(element: any) {
+        this.service.deletById(element.id).subscribe((data: any) => {
+                this.dataSource = data;
+                this.refreshFunc();
+            }
+        );
+    }
+
+    clean() {
+        this.myControl.get('quantidadeEmGramas')?.setValue('');
+        this.myControl.get('tipoRefeicao')?.setValue('');
+        this.myControl.get('dataRegistro')?.setValue('');
+        this.myControl.get('descricao')?.setValue('');
+    }
 }

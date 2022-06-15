@@ -20,4 +20,9 @@ export class RefeicaoService {
         return this.http.get('http://localhost:8080/api/v1/registro-refeicao?cpf=' + cpf);
         // return this.http.get('https://ht-app-back.herokuapp.com/api/v1/registro-refeicao/?cpf=' + cpf);
     }
+
+    public deletById(id: number ) {
+        return this.http.delete('http://localhost:8080/api/v1/registro-refeicao/?id=' + id);
+        // return this.http.get('https://ht-app-back.herokuapp.com/api/v1/registro-refeicao/?id=' + cpf);
+    }
 }

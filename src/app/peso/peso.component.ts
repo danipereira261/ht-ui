@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {PessoaService} from "../../service/peso.service";
 import {PesoModel} from "../../service/model/peso.model";
@@ -35,7 +35,7 @@ export class PesoComponent implements OnInit {
         peso: new FormControl(),
         dataRegistro: new FormControl(),
     });
-    displayedColumns: string[] = ['registro', 'data', 'peso'];
+    displayedColumns: string[] = ['data', 'peso', 'acao'];
 
     dataSource = new MatTableDataSource<PesoModel>([]);
 
@@ -76,6 +76,7 @@ export class PesoComponent implements OnInit {
 
         this.service.cadastrar(model).subscribe(
             c => {
+                this.clean();
                 this.refreshFunc()
                 this.show()
                 setTimeout(() => {
@@ -104,5 +105,18 @@ export class PesoComponent implements OnInit {
 
     remove() {
         const e = this.renderer.selectRootElement('.another-test', false);
+    }
+
+    delete(element: any) {
+        this.service.deletById(element.id).subscribe((data: any) => {
+                this.dataSource = data;
+                this.refreshFunc();
+            }
+        );
+    }
+
+    clean() {
+        this.myControl.get('peso')?.setValue('');
+        this.myControl.get('dataRegistro')?.setValue('');
     }
 }

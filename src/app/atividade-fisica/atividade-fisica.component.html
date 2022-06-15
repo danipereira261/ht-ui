@@ -1,114 +1,82 @@
-
-<body>
-
-<!-- header da página -->
-<header class="header-top">
-    <a >
-        <h1 class="header-title" (click)="home()">Health Track</h1>
-    </a>
-    <div class="d-flex flex-row-reverse">
-        <a href="login.html">
-            <i class="fa fa-sign-out" aria-hidden="true" style="color: white"></i>
+<div style="background-color: #ffffff">
+    <!-- header da página -->
+    <header class="header-top">
+        <a>
+            <h1 class="header-title" (click)="home()">Health Track</h1>
         </a>
-    </div>
-</header>
-<header class="sub-header">
-    <div class="row">
-        <div class="col-12 fw-bold">Registros de Atividade Física</div>
-    </div>
-</header>
+        <div class="d-flex flex-row-reverse">
+            <a>
+                <i class="fa fa-sign-out" aria-hidden="true" style="color: white" (click)="sair()"></i>
+            </a>
+        </div>
+    </header>
+    <header class="sub-header">
+        <a style="font-weight: lighter; color: white!important;">
+            <p><a (click)="home()" style="font-weight: normal; color: white!important;">Home</a> / Registro de Atividade
+                Física</p>
+        </a>
+    </header>
+    <div class="another-test" #asdf></div>
 
-<form>
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card border-0 rounded-3 my-5">
-            <div class="card-body p-4 p-sm-5">
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="data" placeholder="data">
-                    <label for="data">Data</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="atividade" placeholder="atividade">
-                    <label for="atividade">Atividade</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="tempo" placeholder="tempo">
-                    <label for="tempo">Tempo</label>
-                </div>
-                <div class="d-grid" style="margin-top: 10px">
-                    <button class="btn btn-outline-secondary fw-bold col-12" type="button">
-                        Registrar
-                    </button>
-                </div>
+    <div class="container" style="padding: 5%">
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 "></div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <form [formGroup]="myControl">
+                    <div class="form-floating mb-3">
+                        <input formControlName="dataRegistro" name="dataRegistro"
+                               type="date" class="form-control" id="data" placeholder="data">
+                        <label for="data">Data</label>
+                    </div>
+                    <label for="atividade">Tipo de Atividade</label>
+                    <div class="form-floating mb-3 dropdown">
+                        <select formControlName="atividade" name="atividade" id="atividade">
+                            <option value=""></option>
+                            <option value="CAMINHADA">Caminhada</option>
+                            <option value="CORRIDA_MODERADA">Corrida Moderada</option>
+                            <option value="CORRIDA_RAPIDA">Corrida rapida</option>
+                            <option value="BICICLETA">Bicicleta</option>
+                        </select>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="tempo" name="tempo" type="text" class="form-control" id="tempo" placeholder="tempo">
+                        <label for="tempo">Tempo (Minutos)</label>
+                    </div>
+                    <div class="d-grid" style="margin-top: 10px">
+                        <button class="btn btn-secondary fw-bold col-12" type="button" (click)="salvar()">
+                            Registrar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
+        <div class="row" style="margin-top: 20px">
+            <table #matTables mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="dataRegistro">
+                    <th mat-header-cell *matHeaderCellDef>Data</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dataRegistro| date: 'dd/MM/yyyy'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="tipoAtividadeFisica">
+                    <th mat-header-cell *matHeaderCellDef>Atividade</th>
+                    <td mat-cell *matCellDef="let element"> {{element.tipoAtividadeFisica}} </td>
+                </ng-container>
+                <ng-container matColumnDef="duracaoEmMinutos">
+                    <th mat-header-cell *matHeaderCellDef>Tempo</th>
+                    <td mat-cell *matCellDef="let element"> {{element.duracaoEmMinutos}} </td>
+                </ng-container>
+                <ng-container matColumnDef="acao">
+                    <th mat-header-cell *matHeaderCellDef> Ação</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button class="pincel" (click)="delete(element)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Registro</th>
-            <th scope="col">Data</th>
-            <th scope="col">Atividade</th>
-            <th scope="col">Tempo</th>
-            <th scope="col">Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>01/10/2021</td>
-            <td>Abdominal</td>
-            <td>10</td>
-            <td>
-                <a href="#">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </td>
-        <tr>
-            <th scope="row">1</th>
-            <td>01/10/2021</td>
-            <td>Esteira</td>
-            <td>20</td>
-            <td>
-                <a href="#">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>01/10/2021</td>
-            <td>Bicicleta</td>
-            <td>20</td>
-            <td>
-                <a href="#">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>01/10/2021</td>
-            <td>Agachamento</td>
-            <td>10</td>
-            <td>
-                <a href="#">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
-</body>
+</div>
