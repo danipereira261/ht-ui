@@ -13,13 +13,13 @@ export class AtividadeFisicaService {
 
     public cadastrar(request: AtividadeFisicaModel) {
         console.log(request);
-        return this.http.post(`http://localhost:8080/api/v1/registro-atividade-fisica`, request);
-        // return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/registro-atividade-fisica` , request);
+        // return this.http.post(`http://localhost:8080/api/v1/registro-atividade-fisica`, request);
+        return this.http.post(`https://ht-app-back.herokuapp.com/api/v1/registro-atividade-fisica` , request);
     }
 
     public buscarTodosRegistros(cpf: string) {
-        return this.http.get('http://localhost:8080/api/v1/registro-atividade-fisica/?cpf=' + cpf);
-        // return this.http.get('https://ht-app-back.herokuapp.com/api/v1/registro-atividade-fisica/?cpf=' + cpf);
+        // return this.http.get('http://localhost:8080/api/v1/registro-atividade-fisica/?cpf=' + cpf);
+        return this.http.get('https://ht-app-back.herokuapp.com/api/v1/registro-atividade-fisica/?cpf=' + cpf);
     }
 
     public deletById(id: number ) {
